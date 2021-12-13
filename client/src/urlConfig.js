@@ -1,1 +1,1 @@
-export const API = "http://localhost:5050/api";
+export const API = "https://pizzashop-mern-app.herokuapp.com/api";
