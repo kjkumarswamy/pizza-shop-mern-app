@@ -26,6 +26,10 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+app.get("/userdata", (req, res) => {
+  res.send("Hi this si working");
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(morgon("dev"));
