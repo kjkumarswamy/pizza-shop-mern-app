@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const connectDb = require("./config/db");
 const path = require("path");
-const morgon = require("morgan");
 const cors = require("cors");
 
 const PORT = process.env.PORT;
@@ -16,7 +15,6 @@ const orderRoutes = require("./routes/order");
 
 app.use(cors());
 app.use(express.json());
-app.use(morgon("dev"));
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
