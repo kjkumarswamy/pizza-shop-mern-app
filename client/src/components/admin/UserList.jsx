@@ -13,6 +13,14 @@ const UserList = () => {
     dispatch(getUserAction());
   }, [dispatch]);
 
+  const deleteHandler = () => {
+    const yes = window.confirm("Do you want to delete");
+    if (yes) {
+      dispatch(deleteUserAction(user._id));
+    }
+    return;
+  };
+
   return (
     <>
       <h2 className="text-center text-success">Users list</h2>
@@ -35,10 +43,7 @@ const UserList = () => {
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Button
-                    className="btn-danger"
-                    onClick={() => dispatch(deleteUserAction(user._id))}
-                  >
+                  <Button className="btn-danger" onClick={() => deleteHandler}>
                     Delete
                   </Button>
                 </td>
