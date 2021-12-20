@@ -33,7 +33,7 @@ const Cart = () => {
                         addToCartAction(item, item.quantity - 1, item.varient)
                       )
                     }
-                  />{" "}
+                  />
                   &nbsp;
                   {item.quantity} &nbsp;
                   <FaPlusCircle

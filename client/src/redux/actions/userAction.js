@@ -1,5 +1,6 @@
 import axios from "../../helpers/axios";
 import { userConstants } from "../constants";
+import { logoutAction } from "../actions/authAction";
 
 //all user list
 export const getUserAction = () => {
@@ -35,7 +36,7 @@ export const deleteUserAction = (id) => {
           type: userConstants.DELETE_USER_SUCCESS,
           payload: { message: res.data.message },
         });
-        dispatch(getUserAction());
+        dispatch(logoutAction());
       } else {
         dispatch({
           type: userConstants.DELETE_USER_FAILURE,
