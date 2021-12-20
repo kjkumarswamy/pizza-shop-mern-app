@@ -13,12 +13,11 @@ const UserList = () => {
     dispatch(getUserAction());
   }, [dispatch]);
 
-  const deleteHandler = () => {
+  const deleteHandler = (id) => {
     const yes = window.confirm("Do you want to delete");
     if (yes) {
-      dispatch(deleteUserAction(user._id));
+      dispatch(deleteUserAction(id));
     }
-    return;
   };
 
   return (
@@ -43,7 +42,10 @@ const UserList = () => {
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Button className="btn-danger" onClick={deleteHandler}>
+                  <Button
+                    className="btn-danger"
+                    onClick={() => deleteHandler(user._id)}
+                  >
                     Delete
                   </Button>
                 </td>
