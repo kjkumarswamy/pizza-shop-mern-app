@@ -43,7 +43,7 @@ const UserList = () => {
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>
-                  <Button className="btn-danger" onClick={() => deleteHandler}>
+                  <Button className="btn-danger" onClick={deleteHandler}>
                     Delete
                   </Button>
                 </td>
